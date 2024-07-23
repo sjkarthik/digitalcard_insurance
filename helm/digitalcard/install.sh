@@ -7,7 +7,7 @@ if [ $# -ge 1 ] ; then
 fi
 
 
-NS=digitalcard
+NS=digitalcard-insurance
 CHART_VERSION=12.0.1
 
 echo Create $NS namespace
@@ -23,7 +23,7 @@ function installing_digitalcard() {
   ./copy_cm.sh
 
   echo Installing digital card service
-  helm -n $NS  install  digitalcard mosip/digitalcard --wait  --version $CHART_VERSION
+  helm -n $NS  install  digitalcard-insurance mosip/digitalcard --wait  --version $CHART_VERSION
   return 0
 }
 
